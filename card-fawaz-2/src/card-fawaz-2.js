@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
 const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 
@@ -187,21 +188,30 @@ class CardFawaz2 extends LitElement {
   constructor() {
     super();
     this.header = 'My app';
+    this.top = "Hello"
+  
   }
 
   render() {
     return html`
     <div class="card">
 
+    
+
     <img src="https://i.pinimg.com/564x/c4/81/c0/c481c067ad2e11fab13ffe39bc0fd975.jpg" alt="Card Image">
+
+    <meme-maker image-url="https://i.pinimg.com/564x/c4/81/c0/c481c067ad2e11fab13ffe39bc0fd975.jpg"
+            top-text="Hello"
+            bottom-text="If you don't write any"
+            font-size="28px"></meme-maker>
   
     <h2>Welcome</h2>
   
     <p>I was tasked with making a card for this class. I decided to keep it simple and nice. I also decided to add my handsome face to it. </p>
   
-    <a style=text-decoration: none;href="https://hax.psu.edu">
+   
       <button class="cool-button">DETAILS</button>
-    </a>
+    
   </div>
   
   <button id="duplicate">DUPLICATION MACHINE</button>
