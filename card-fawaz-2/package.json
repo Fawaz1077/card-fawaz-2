@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "@lrnwebcomponents/meme-maker": "^4.1.0",
-    "esbuild": "^0.17.9",
     "lit": "^2.0.2"
   },
   "devDependencies": {
