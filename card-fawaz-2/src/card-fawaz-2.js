@@ -4,11 +4,23 @@ import "@lrnwebcomponents/meme-maker/meme-maker.js";
 const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 
 class CardFawaz2 extends LitElement {
-  static properties = {
-    header: { type: String },
-  }
+    static get properties() {
+      return {
+        name: {
+          type: String,
+          reflect: true
+        },
+        fname: { type: String},
+        position: {
+          type: String,
+        },
+        top: { type: String},
+        titeWelcome: { type: String},
+      }
+    }
 
-  static styles = css`
+    static get styles() {
+      return css`
   .card {
     width: 300px;
     height: 400px;
@@ -182,42 +194,37 @@ class CardFawaz2 extends LitElement {
     }
   }
   
-  
+
   `;
+    }
 
   constructor() {
     super();
     this.header = 'My app';
-    this.top = "Hello"
+    this.name = "Welcome";
+  
+    
   
   }
 
   render() {
     return html`
     <div class="card">
-
-    
-
+      
     <img src="https://i.pinimg.com/564x/c4/81/c0/c481c067ad2e11fab13ffe39bc0fd975.jpg" alt="Card Image">
-
-    <meme-maker image-url="https://i.pinimg.com/564x/c4/81/c0/c481c067ad2e11fab13ffe39bc0fd975.jpg"
-            top-text="Hello"
-            bottom-text="If you don't write any"
+    <meme-maker image-url="https://i.pinimg.com/736x/4d/7c/72/4d7c722291a2f73af96d808395a25f0b.jpg"
+            top-text="My honest reaction"
+            bottom-text="to that information"
             font-size="28px"></meme-maker>
-  
-    <h2>Welcome</h2>
-  
-    <p>I was tasked with making a card for this class. I decided to keep it simple and nice. I also decided to add my handsome face to it. </p>
-  
+
    
-      <button class="cool-button">DETAILS</button>
-    
-  </div>
+   <h2>${this.name}</h2>
   
-  <button id="duplicate">DUPLICATION MACHINE</button>
-  <button id="change-color">COLOR CHANGING MACHINE</button>
-  <button id="change-text">TEXT CHANGING MACHINE</button>
-  <button class="delete">DELETING MACHINE</button>
+
+   <details class="details">
+  <p>I was tasked with making a card for this class. I decided to keep it simple and nice. I also decided to add my handsome face to it. </p>
+  </details>
+  </div>
     `;
   }
 }

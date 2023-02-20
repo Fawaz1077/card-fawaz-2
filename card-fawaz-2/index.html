@@ -13,17 +13,80 @@
       margin: 0;
       padding: 0;
       font-family: sans-serif;
-      background-color: #ededed;
+      background-color: #6165ce;
     }
   </style>
+   
   <title>card-fawaz-2</title>
 </head>
 
 <body>
+  <button id="duplicate">DUPLICATION MACHINE</button>
+   <button id="change-text">TEXT CHANGING MACHINE</button>
+   <button class="delete">DELETING MACHINE</button>
+   <button class="details-button">DETAILS MACHINE</button>
+  <div id="meow"> 
   <card-fawaz-2></card-fawaz-2>
- 
+</div>
+  <meme-maker></meme-maker>
 
-  <script type="module" src="./src/card-fawaz-2.js"></script>
+ 
+  
+   
+   
+<script type="module" src="./src/card-fawaz-2.js"></script>
+
+<script> 
+
+
+
+document.querySelector('#duplicate').addEventListener('click', function(e) {
+  const cloneItem = document.querySelector('card-fawaz-2').cloneNode();
+ 
+  document.querySelector('#meow').appendChild(cloneItem);
+});
+
+document.querySelector('.details-button').addEventListener('click', (e) => {
+  const details = document.querySelector('card-fawaz-2').shadowRoot.querySelector('details')
+console.log ( details ) ; 
+if ( details.getAttribute ('open')) {
+  details.removeAttribute ('open') ;
+}
+else {
+  details.setAttribute ('open' ,'open' ) ;
+}
+});
+
+let originalTitle = "Welcome";
+
+document.querySelector('#change-text').addEventListener("click", function (e) {
+let therapy = prompt("What's on your mind?")
+if (therapy) {
+  document.querySelector('card-fawaz-2').shadowRoot.querySelector('h2').innerText = therapy;
+  
+}
+
+});
+
+document.querySelector('.delete').addEventListener("click", function (e) {
+
+if ( document.querySelector('#meow :last-child') !== document.querySelector('card-fawaz-2')) {
+    document.querySelector('#meow :last-child').remove();
+ }
+  else {
+    alert ("My dawg what are you doing") ;
+ }
+
+});
+
+
+
+
+
+
+
+
+  </script>
 </body>
 
 </html>
